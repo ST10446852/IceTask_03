@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace IceTask_03
 {
-    class Shape
+    public abstract class Shape
     {
         string Name { get; }
 
         public Shape(string name)
         {
-            Name = name;
+            this.Name = name;
         }
 
-        public virtual void CalculateArea()
+        public virtual void Display()
         {
-            Console.WriteLine("Method will be overridden");
+            Console.WriteLine("Shape: " + Name);
+
+
         }
     }
 }

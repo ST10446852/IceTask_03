@@ -7,15 +7,25 @@ using System.Threading.Tasks;
 
 namespace IceTask_03
 {
-    class Rectangle : Shape
+    class Rectangle : Shape, ICalculateArea
     {
-        int Length { get; }
-        int Width { get; } 
+        double Length { get; }
+        double Width { get; }
 
-        public Rectangle (int lenght, int width) : base(name)
+        public Rectangle(string name, double width, double length) : base(name)
         {
             this.Width = width;
-            this.Length = lenght;
+            this.Length = length;
+        }
+        public double CalculateArea()
+        {
+            return Width * Length;
+        }
+
+        public override void Display()
+        {
+            
+            Console.WriteLine($"Width: {Width}, Height: {Length}, Area: {CalculateArea()}");
         }
     }
 }
